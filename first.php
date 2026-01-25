@@ -1,7 +1,6 @@
 <?php
-
-    $user = "Symon";
-    echo(`Hello, ${user}`)
+$str = "Hello world!";
+echo $str;
 ?>
 
 <!DOCTYPE html>
