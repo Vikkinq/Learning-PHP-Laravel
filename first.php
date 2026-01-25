@@ -1,3 +1,9 @@
+<?php
+
+    $user = "Symon";
+    echo(`Hello, ${user}`)
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
