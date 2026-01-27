@@ -1,5 +1,15 @@
 <?php 
-    echo("Index Page");
+    $name = "Symon";
+    $age = 23;
+    $email = "symon@gmail.com";
+
+    echo("Index Page <br>");
+    echo("I am {$name}<br>");
+    echo("My age is {$age} years old<br>");
+    echo("My email is {$email}<br>");
+
+    
+    
 
     
 ?>
