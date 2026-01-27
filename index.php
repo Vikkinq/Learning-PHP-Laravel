@@ -7,9 +7,9 @@
     $isAdult = $age > 18;
 
     echo("Index Page <br>");
-    echo("I am {$name}<br>");
-    echo("My age is {$age} years old<br>");
-    echo("My email is {$email}<br>");
+    // echo("I am {$name}<br>");
+    // echo("My age is {$age} years old<br>");
+    // echo("My email is {$email}<br>");
 
     if($isAdult){
         echo("You are Adult");
