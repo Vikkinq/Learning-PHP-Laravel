@@ -6,7 +6,7 @@
     <title>Login Form</title>
 </head>
 <body>
-    <form action="requests.php" method="get">
+    <form action="requests.php" method="post">
         <label for="username">username: </label><br>
         <input type="text" name="username"><br>
         <label for="password">password: </label><br>
@@ -19,5 +19,9 @@
 </html>
 
 <?php 
+    // echo("Username is: {$_GET["username"]} <br>");
+    // echo("Username is: {$_GET["password"]} <br>");
 
+    // echo("Username is: {$_POST["username"]} <br>");
+    // echo("Username is: {$_POST["password"]} <br>");
 ?>
