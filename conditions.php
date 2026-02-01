@@ -37,5 +37,7 @@
         echo("You are a Teen");
     } elseif($age > 5){
         echo("You are a Kid");
+    } else {
+        echo("You are not Human");
     }
 ?>
