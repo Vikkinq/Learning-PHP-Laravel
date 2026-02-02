@@ -12,5 +12,7 @@
         case "C":
             echo("You are decent");
             break;
+        default:
+            echo("Not Valid");
     }
 ?>
