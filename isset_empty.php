@@ -14,8 +14,17 @@
             <label for="password">Password: </label>
             <input type="password" placeholder="Enter Password" name="password">
             <br>
-            <input type="Submit" name="login" value="Login">
+            
         </div>
+
+        <div>
+            <input type="radio" name="food" value="Hamburger"> Hamburger
+            <input type="radio" name="food" value="Pizza"> Pizza
+            <input type="radio" name="food" value="French Fries"> French Fries
+        </div>
+
+        <input type="Submit" name="login" value="Login">
+
     </form>
 </body>
 </html>
@@ -30,6 +39,11 @@
     if(isset($_POST["login"])){
         $username = $_POST["username"];
         $password = $_POST["password"];
+
+        if(isset($_POST["food"])){
+            $food = $_POST["food"];
+            echo("{$food}");
+        }
 
         if(empty($username)){
             echo("You need Username to Login");
