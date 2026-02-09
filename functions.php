@@ -22,5 +22,6 @@
     isEven(3);
     calculator(2, 5);
     calculator(5, 5);
+    calculator(5, 5);
     
 ?>
