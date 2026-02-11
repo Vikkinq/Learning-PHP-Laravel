@@ -9,7 +9,9 @@
     echo(str_pad($word, 20, "/") . "<br>");
     echo(strrev($word) . "<br>");
     echo(str_shuffle($word) . "<br>");
-    echo(str_pad($word, 20, "/") . "<br>");
+    echo(strcmp($word, "Hello There") . "<br>");
+    echo(strlen($word));
+    echo(strpos($word, "T"));
 
 
     echo("<br>" .  str_replace("+63", "0", $phone) . "<br>");
