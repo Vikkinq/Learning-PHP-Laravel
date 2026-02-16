@@ -10,11 +10,18 @@
     <title>Document</title>
 </head>
 <body>
-    <a href="index.php">This goes to Index Page</a>
+    <form action="home.php" method="post">
+        <input type="submit" name="logout">
+    </form>
 </body>
 </html>
 
 <?php
     echo($_SESSION["username"] . "<br>");
     echo($_SESSION["password"] . "<br>");
+
+    if(isset($_POST["logout"])){
+        session_destroy();
+        header("Location: index.php");
+    }
 ?>

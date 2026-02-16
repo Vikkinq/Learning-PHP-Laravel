@@ -16,7 +16,7 @@
             <input type="text" name="username" id="username" placeholder="Enter Username">
             <label for="password">Password: </label>
             <input type="password" name="password" placeholder="Enter Password">
-            <input type="submit">
+            <input type="submit" name="login">
         </div>
     </form>
 
@@ -25,22 +25,15 @@
 </html>
 
 <?php
-    $_SESSION["username"] = $_POST["username"];
-    $_SESSION["password"] = $_POST["password"];
+    if(isset($_POST["login"])){
+        if(!empty($_POST["username"] && !empty($_POST["password"]))){
+            $_SESSION["username"] = $_POST["username"];
+            $_SESSION["password"] = $_POST["password"];
 
-    /*if($_SESSION["username"] === null){
-        echo($_SESSION["username"]  . "<br>");
-    } else {
-        echo("No Username");
+            header("Location: home.php");
+        } else {
+            echo("Missing password and username");
+        }
     }
-
-    if(empty($_SESSION["password"])){
-        echo($_SESSION["password"] . "<br>");
-    } else {
-        echo("No Password!");
-    } */
-
-    echo($_SESSION["username"]  . "<br>");
-    echo($_SESSION["password"] . "<br>");
 
 ?>
