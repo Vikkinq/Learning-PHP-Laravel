@@ -1,5 +1,20 @@
 <?php
     include("database.php");
+
+    $username = "samueljackson";
+    $password = "samuel123";
+    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+
+    $sql = "INSERT INTO users (username, password) VALUES ('$username', '$hashed_password')";
+
+    try {
+        mysqli_query($database_connection, $sql);
+        echo("User Registered Successfully!");
+    } catch(mysqli_sql_exception){
+        echo("Cant register User!");
+    }
+
+    mysqli_close($database_connection);
 ?>
 
 <!DOCTYPE html>
