@@ -55,12 +55,50 @@
     <title>Login</title>
 </head>
 <body>
-    <h1>
-        Hello
-    </h1>
+    <form action="<?php htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="post">
+        <h1>Login!</h1>
+        <div>
+            <label for="username">Username: </label>
+            <input type="text" name="username" id="username" placeholder="Enter Username">
+            <label for="password">Password: </label>
+            <input type="password" name="password" placeholder="Enter Password">
+            <input type="submit" name="login">
+        </div>
+    </form>
 </body>
 </html>
 
 <?php 
+
+    if($_SERVER["REQUEST_METHOD"] === "POST"){
+        $username = filter_input(INPUT_POST, "username", FILTER_SANITIZE_SPECIAL_CHARS);
+        $password = filter_input(INPUT_POST, "password", FILTER_SANITIZE_SPECIAL_CHARS);
+    }
+
+    if(empty($username)){
+        echo("Username must not be Empty!");
+    } elseif(empty($password)){
+        echo("Password must not be Empty!");
+    } else {
+        $sql = "SELECT * FROM users WHERE username = '$username'";
+        $result = mysqli_query($database_connection, $sql);
+
+        if(mysqli_num_rows($result)){
+            $row = mysqli_fetch_assoc($result);
+            if(password_verify($password, $row["password"])){
+                echo("<br> {$row["id"]} <br>");
+                echo("<br> {$row["username"]} <br>");
+                echo("<br> {$row["registered_date"]} <br>");
+            } else {
+                echo("<br>Wrong Password and Username, Please try Again!");
+            }
+        } else {
+            echo("No User Found");
+        }
+    }
+
+
+    
+
     mysqli_close($database_connection);
 ?>
