@@ -31,6 +31,7 @@
     } */
 
     // Finds all Value and Echo all of it without Clause
+    /*
     $sql = "SELECT * FROM users";
     $result = mysqli_query($database_connection, $sql);
 
@@ -43,8 +44,7 @@
     } else {
         echo("No User Found");
     }
-
-    mysqli_close($database_connection);
+        */
 ?>
 
 <!DOCTYPE html>
@@ -52,7 +52,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form</title>
+    <title>Login</title>
 </head>
 <body>
     <h1>
@@ -60,3 +60,7 @@
     </h1>
 </body>
 </html>
+
+<?php 
+    mysqli_close($database_connection);
+?>
